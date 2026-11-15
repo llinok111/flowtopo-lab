@@ -3,7 +3,7 @@
 **Promise (measured, baseline in `baseline/naive.mjs`):** recovering the 8 critical points of a
 3×3×3 `sin` lattice takes **1.51 ms median** (cold 8.72 ms) with **0.0** localization error at
 double precision, while a 64³ grid sign-change scan takes **220.87 ms** (cold 305.88 ms) and lands
-**6.08e-2** away — **146× faster, ~6e13× more accurate**. The same scan misses the degenerate
+**6.08e-2** away — **146× faster**, with a localization error of 0.0 (residual 2.1e-16) versus 6.08e-2. The same scan misses the degenerate
 (tangential) zero entirely (**0/1 recall**) and reports **3 points where the quadratic field has 2**
 (one false positive). On the divergence-free ABC flow, RK4 holds accumulated volume drift to
 **4.56e-5** where Euler gives **0.489** (**10,730×**).

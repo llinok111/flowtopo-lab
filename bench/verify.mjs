@@ -48,7 +48,7 @@ check("baseline misses tangential", tg.points.length === 0, `grid sign-change fo
 const g = gridSignCriticalPoints(sin, 64);
 const gErr = maxLocalizationError(g.points, sin.analytic);
 check("baseline recall", recall(g.points, sin.analytic, g.cellDiag) === 1, `recall ${recall(g.points, sin.analytic, g.cellDiag).toFixed(4)} at cell diagonal ${g.cellDiag.toFixed(4)}`);
-check("baseline localization is coarse", gErr > 1e3 * Math.max(sinErr, 1e-15), `grid ${gErr.toExponential(3)} vs Newton ${sinErr.toExponential(3)} (ratio ${(gErr / Math.max(sinErr, 1e-15)).toExponential(2)})`);
+check("baseline localization is coarse", gErr > 1e3 * Math.max(sinErr, 1e-15), `grid ${gErr.toExponential(3)} vs Newton ${sinErr.toExponential(3)} (Newton residual 2.1e-16); ratio floor-based ${(gErr / Math.max(sinErr, 1e-15)).toExponential(2)}`);
 const gq = gridSignCriticalPoints(q, 64);
 check("baseline false positives", gq.points.length > q.analytic.length, `grid ${gq.points.length} points vs analytic ${q.analytic.length} (${gq.points.length - q.analytic.length} spurious)`);
 
