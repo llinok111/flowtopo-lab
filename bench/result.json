@@ -1,0 +1,83 @@
+{
+ "schema": "flowtopo-bench/1",
+ "node": "v24.19.0",
+ "reps": 7,
+ "metrics": {
+  "criticalPointsSin": {
+   "coldStartMs": 8.7156,
+   "warm": {
+    "min": 1.3671,
+    "median": 1.5105,
+    "p95": 2.1207,
+    "max": 2.1207,
+    "stddev": 0.2386,
+    "relStdPct": 15.8,
+    "n": 7
+   },
+   "points": 8,
+   "runs": 240,
+   "evals": 3624,
+   "baselineGrid64": {
+    "coldStartMs": 305.8837,
+    "warm": {
+     "min": 199.8753,
+     "median": 220.8663,
+     "p95": 538.4848,
+     "max": 538.4848,
+     "stddev": 143.0325,
+     "relStdPct": 64.76,
+     "n": 7
+    },
+    "points": 8,
+    "cells": 262144
+   },
+   "speedupMedian": 146.22,
+   "gridBoxDiagonal": 10.882796,
+   "maxNewtonLocalizationError": 0,
+   "maxGridLocalizationError": 0.060766681658990636
+  },
+  "volumeDriftAbc": {
+   "rk4": {
+    "coldStartMs": 2.1979,
+    "warm": {
+     "min": 0.2535,
+     "median": 0.4115,
+     "p95": 1.879,
+     "max": 1.879,
+     "stddev": 0.5601,
+     "relStdPct": 136.13,
+     "n": 7
+    },
+    "drift": 0.00004558917
+   },
+   "euler": {
+    "coldStartMs": 0.7612,
+    "warm": {
+     "min": 0.0836,
+     "median": 0.1467,
+     "p95": 0.6646,
+     "max": 0.6646,
+     "stddev": 0.2021,
+     "relStdPct": 137.82,
+     "n": 7
+    },
+    "drift": 0.4891738
+   },
+   "steps": 100,
+   "hRel": 0.01,
+   "ratio": 10730
+  },
+  "divergenceAbc": {
+   "warm": {
+    "min": 0.2298,
+    "median": 0.2959,
+    "p95": 0.7136,
+    "max": 0.7136,
+    "stddev": 0.1625,
+    "relStdPct": 54.92,
+    "n": 7
+   },
+   "maxAbsDivergence200": 0
+  }
+ }
+}

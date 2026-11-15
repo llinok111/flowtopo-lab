@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>flowtopo-lab — 3D vector-field topology with node-checkable numbers</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  html,body{margin:0;height:100%;background:#07090f;color:#dfe7f5;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
+  #app{position:fixed;inset:0}
+  #hud{position:fixed;top:12px;left:12px;width:330px;padding:12px 14px;background:rgba(10,14,24,.82);
+       border:1px solid #1d2740;border-radius:10px;backdrop-filter:blur(6px)}
+  #hud h1{font-size:14px;margin:0 0 6px;letter-spacing:.02em}
+  #hud .sub{color:#8d9bb5;margin-bottom:10px}
+  .row{display:flex;justify-content:space-between;gap:8px;margin:3px 0}
+  .k{color:#8d9bb5}.v{color:#eaf1ff}
+  .ok{color:#6ee7a8}.bad{color:#ff6b6b}
+  select,button{background:#111827;color:#dfe7f5;border:1px solid #2a3a5c;border-radius:6px;padding:4px 8px;font:inherit}
+  button{cursor:pointer}button:hover{border-color:#4a6ea8}
+  #controls{position:fixed;bottom:12px;left:12px;display:flex;gap:8px;align-items:center;background:rgba(10,14,24,.82);
+            border:1px solid #1d2740;border-radius:10px;padding:8px 12px}
+  input[type=range]{width:120px}
+  #note{position:fixed;bottom:12px;right:12px;max-width:360px;color:#7b8aa5;text-align:right}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div id="hud">
+  <h1>flowtopo-lab</h1>
+  <div class="sub">critical points → eigenvalues → topology<br>same core.mjs as node</div>
+  <div class="row"><span class="k">field</span><span class="v" id="f-name">sin-lattice</span></div>
+  <div class="row"><span class="k">critical points</span><span class="v" id="m-count">–</span></div>
+  <div class="row"><span class="k">max |p − p*|</span><span class="v" id="m-err">–</span></div>
+  <div class="row"><span class="k">fingerprint</span><span class="v" id="m-fp">–</span></div>
+  <div class="row"><span class="k">max |div u|</span><span class="v" id="m-div">–</span></div>
+  <div class="row"><span class="k">vol drift rk4 / euler</span><span class="v" id="m-vol">–</span></div>
+  <div class="row"><span class="k">types</span><span class="v" id="m-types">–</span></div>
+</div>
+<div id="controls">
+  <label for="seeds">grid seeds</label>
+  <input id="seeds" type="range" min="2" max="10" step="1" value="6">
+  <span id="seeds-v">6³</span>
+  <button id="recompute">recompute in page</button>
+</div>
+<div id="note">drag to orbit · scroll to zoom<br>all numbers recomputed live by src/core.mjs</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
