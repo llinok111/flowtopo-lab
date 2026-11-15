@@ -7,6 +7,6 @@ __pycache__/
 *.tar.gz
 *.tgz
 *.7z
-data/*.tmp
-.DS_Storestate/
+.DS_Store
+state/
 .model-patch.yml
